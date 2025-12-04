@@ -10,10 +10,19 @@
 <body>
 
 <header>
-    <nav>
-        <ul>
+    <nav class="nav">
+        <div class="nav__brand">
+            <a href="index.html" class="nav__logo">DM</a>
+            <input type="checkbox" id="nav-toggle" class="nav__checkbox">
+            <label for="nav-toggle" class="nav__button" aria-hidden="true">
+                <span class="nav__hamburger"></span>
+            </label>
+        </div>
+        <ul class="nav__links">
             <li><a href="index.html">Accueil</a></li>
-            <li><a href="tweets.html">blog</a></li>
+            <li><a href="tweets.html">Blog</a></li>
+            <li><a href="#">À propos</a></li>
+            <li><a href="#">Contact</a></li>
         </ul>
     </nav>
 </header>
