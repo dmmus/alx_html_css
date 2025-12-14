@@ -150,3 +150,162 @@ main {
     color: #FFFFFF;
     font-size: var(--font-body-size);
 }
+
+/* =============================
+   MENU HAMBURGER STYLES
+   ============================= */
+
+/* Masquer le checkbox et la liste de navigation par défaut sur desktop */
+.menu-btn {
+    display: none;
+}
+
+.menu-icon {
+    cursor: pointer;
+    display: none; /* Caché par défaut, affiché seulement sur mobile */
+    padding: 21px 0;
+    position: relative;
+    user-select: none;
+}
+
+.menu-icon .navicon {
+    background: #fff;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 20px;
+}
+
+.menu-icon .navicon:before,
+.menu-icon .navicon:after {
+    background: #fff;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+.menu-icon .navicon:before {
+    top: 5px; /* Décalage pour la ligne du haut */
+}
+
+.menu-icon .navicon:after {
+    top: -5px; /* Décalage pour la ligne du bas */
+}
+
+/* Les styles pour ouvrir le menu */
+.menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent; /* Masquer la ligne centrale */
+}
+
+.menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg); /* Rotation pour former un X */
+    top: 0;
+}
+
+.menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg); /* Rotation pour former un X */
+    top: 0;
+}
+
+/* =============================
+   MEDIA QUERIES - TABLETTE (max-width: 992px)
+   ============================= */
+
+@media screen and (max-width: 992px) {
+    /* Ajustement du padding général du header */
+    header nav {
+        padding: 0 40px; /* Réduire le padding de 80px à 40px */
+    }
+
+    /* Ajustement de la section hero pour centrer le contenu et réduire le padding */
+    .hero-1 {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+    /* Le reste de la disposition de la tablette est déjà bien géré par flexbox
+       tant que l'espace est suffisant pour la liste de navigation. */
+}
+
+/* =============================
+   MEDIA QUERIES - MOBILE (max-width: 768px)
+   ============================= */
+
+@media screen and (max-width: 768px) {
+    /* Afficher l'icône du menu hamburger et cacher la liste de navigation */
+    header nav {
+        padding: 0 20px; /* Padding plus petit pour mobile */
+        /* Utiliser le positionnement absolu pour le logo afin de le mettre au centre 
+           et le menu icon à gauche, comme dans le GIF. */
+        position: relative;
+    }
+
+    /* Afficher l'icône du menu */
+    .menu-icon {
+        display: block;
+        order: -1; /* Placer à gauche du logo */
+        margin-right: auto;
+    }
+
+    /* Centrer le logo sur mobile */
+    header .logo {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    /* Cacher la liste de navigation par défaut sur mobile */
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 80px; /* Sous le header */
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.9); /* Fond sombre pour le menu */
+        z-index: 10;
+        padding: 20px 0;
+    }
+
+    header nav ul li {
+        text-align: center;
+        margin: 10px 0;
+    }
+    
+    header nav ul li a {
+        font-size: 1rem; /* Rendre la police plus lisible */
+    }
+
+    /* Afficher le menu lorsque le bouton est cliqué */
+    .menu-btn:checked ~ ul {
+        display: flex;
+    }
+    
+    /* Ajustement de la section hero pour mobile */
+    .hero_and_header {
+        height: auto; /* Laisser la hauteur s'adapter au contenu */
+        min-height: 800px; /* S'assurer d'une hauteur minimale si nécessaire */
+    }
+
+    .hero-1 {
+        margin-top: 150px; /* Ajuster le marge supérieure pour laisser de la place au header */
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .hero-1 h1 {
+        font-size: 1.5rem; /* Réduire la taille du titre */
+    }
+
+    .btn-primary {
+        margin-bottom: 30px; /* Réduire l'espace sous le bouton */
+    }
+
+    .hero-1 p {
+        margin-top: 30px; /* Ajouter une marge pour séparer le texte du bouton */
+    }
+}
