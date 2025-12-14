@@ -1,0 +1,152 @@
+/* font source sans pro */
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("/assets/fonts/source-sans-pro/SourceSansPro-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* font Spin-Cycle-OT */
+@font-face {
+  font-family: "Spin Cycle OT";
+  src: url("/assets/fonts/Spin-Cycle-OT/spincycle_ot.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+  /* =============================
+     TYPOGRAPHY
+     ============================= */
+
+  /* Main title */
+  --font-title-family: "Source Sans Pro", sans-serif;
+  --font-title-size: 2rem; /* équivalent 32px */
+  --font-title-weight: 700; /* bold */
+
+  /* Body text */
+  --font-body-family: "Source Sans Pro", sans-serif;
+  --font-body-size: 1rem; /* équivalent 16px */
+  --font-body-line-height: 1.5; /* equivalent to 24px line-height  */
+
+  /* Primary color */
+  --color-primary: #FF6565;
+}
+
+/* =============================
+   HEADER & NAVIGATION
+   ============================= */
+
+header {
+  width: 100%;
+  height: 80px; /* ajustable selon design */
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between; /* logo à gauche, nav à droite */
+  align-items: center;
+  max-width: 100%; /* correspond à la frame Figma */
+  padding: 0 80px; /* léger padding pour resp. */
+  height: 100%;
+}
+
+header .logo img {
+  display: block;
+  height: 31px; /* ajustable selon design */
+  width: 161px;
+}
+
+/* =============================
+   NAVIGATION LIST
+   ============================= */
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 41px; /* respect Figma : espace entre chaque lien */
+}
+
+header nav ul li a {
+  text-decoration: none;
+  font-family: var(--font-body-family);
+  font-size: 0.8 rem;;
+  font-weight: 700;
+  color: #fff; /* ou autre couleur si le background nécessite */
+  transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: var(--color-primary); /* effet hover pro */
+}
+
+.hero_and_header {
+  width: 100%;
+  height: 800px; /* ajustable selon design */
+  background-image: url('/assets/headphones_hero_1.jpg'); /* image identique à l'hero */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+main {
+    font-family: var(--font-body-family);;
+}
+/* =============================
+   HERO SECTION
+   ============================= */
+.hero-1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 292px;
+    padding-left: 300px;
+    padding-right: 300px;
+}
+
+.hero-1 h1 {
+    font-size: var(--font-title-size);
+    font-weight: var(--font-title-weight);
+    color: #FFFFFF;
+}
+
+.description-hero {
+    font-size: var(--font-body-size);
+    color: #FFFFFF;
+    margin-bottom: 32px;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: var(--color-primary);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: var(--font-title-weight);
+  transition: background-color 0.3s ease;
+  margin-bottom: 56px;
+}
+.btn-primary:hover {
+  background-color: var(--color-primary); 
+  opacity: 0.9;/* couleur légèrement plus foncée au hover */
+}
+
+.hero-1 p {
+    line-height: var(--font-body-line-height);
+    color: #FFFFFF;
+    font-size: var(--font-body-size);
+}
